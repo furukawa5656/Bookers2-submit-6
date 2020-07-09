@@ -1,0 +1,38 @@
+
+
+
+<div class="container">
+	<%= form_for(@user) do |f| %>
+	<h2>User info</h2>
+	  <% if @user.errors.any? %>
+	  <h3><%= @user.errors.count %> error</h3>
+	  <ul>
+	  <% @user.errors.full_messages.each do |message| %>
+	  <%= message %>
+	  <% end %>
+	  </ul>
+      <% end %>
+	<div class="field name">
+	  <label for="user_name">Name</label>
+	  <%= f.text_field :name %>
+	</div>
+	<div class="field image">
+	  <label for="user_image">Image</label>
+	  <%= f.attachment_field :profile_image %>
+	</div>
+	<div class="field introduction">
+	  <label for="user_introduction">Introduction</label>
+	  <%= f.text_field :introduction %>
+	</div>
+	<div class="actions update">
+		<%= f.submit "Update User" %>
+	</div>
+	<% end %>
+</div>
+
+
+
+
+
+
+

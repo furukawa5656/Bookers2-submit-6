@@ -1,0 +1,4 @@
+$("#comments_area").html("<%= j(render partial: 'book_comments/index', locals: {books: @books}) %>");
+
+
+// #comments_areaの後に_<%= @comment.id %>のようなどのidを特定する記述をするのは好ましくない
